@@ -1,0 +1,30 @@
+name: Build Windows Installer
+
+on:
+  push:
+    branches: [main, master]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - name: Baixar o código
+        uses: actions/checkout@v4
+
+      - name: Preparar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Instalar dependências
+        run: npm install
+
+      - name: Gerar o instalador Windows (.exe)
+        run: npm run build
+
+      - name: Disponibilizar o instalador pra download
+        uses: actions/upload-artifact@v4
+        with:
+          name: SGC-SP-PigeonMaster-Windows
+          path: dist/*.exe
