@@ -20,11 +20,11 @@ jobs:
       - name: Instalar dependências
         run: npm install
 
-      - name: Gerar o instalador Windows (.exe)
+      - name: Gerar o programa Windows (.zip)
         run: npm run build
 
-      - name: Disponibilizar o instalador pra download
+      - name: Disponibilizar para download
         uses: actions/upload-artifact@v4
         with:
           name: SGC-SP-PigeonMaster-Windows
-          path: dist/*.exe
+          path: dist/*.zip
