@@ -1,0 +1,41 @@
+{
+  "name": "sgc-sp-pigeonmaster",
+  "version": "2.1.0",
+  "description": "S.G.C-S.P - Sistema de Gestão de Concursos - Clube Columbófilo Limeirense",
+  "main": "main.js",
+  "author": "Clube Columbófilo Limeirense",
+  "license": "UNLICENSED",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder --win",
+    "build:portable": "electron-builder --win portable"
+  },
+  "devDependencies": {
+    "electron": "^31.0.0",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "com.clubecolumbofilolimeirense.sgcsp",
+    "productName": "SGC-SP PigeonMaster",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "main.js",
+      "app/**/*"
+    ],
+    "win": {
+      "target": [
+        { "target": "nsis", "arch": ["x64"] }
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "SGC-SP PigeonMaster"
+    }
+  }
+}
