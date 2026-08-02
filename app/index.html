@@ -2497,7 +2497,7 @@ function editarLancamento(i){
   document.getElementById("lancDataIni").value=l.dataIni||"";
   document.getElementById("lancHoraIni").value=l.horaIni||"";
   document.getElementById("lancDataFim").value=l.dataFim||"";
-  document.getElementById("lancHoraFim").value="";
+  document.getElementById("lancHoraFim").value=l.horaFim||"";
   document.getElementById("lancDias").value=l.dias||"1";
   document.getElementById("lancChegada").value=l.chegada||"";
   document.getElementById("lancPartida").value=l.partida||"";
@@ -3703,7 +3703,7 @@ function abrirCertificadoParaConcurso(ano,num,nome){
    programa instalado no PC. Deixe em branco ("") para usar o endereço atual
    da página (comportamento antigo, só funciona bem se estiver usando pelo
    navegador mesmo). */
-const PMR_LINK_BASE_URL="";
+const PMR_LINK_BASE_URL="https://pigeon-master-limeira.vercel.app/";
 
 const PMR_SECRET_KEY="SGC_SP_LIMEIRA_2026_@#SEC_KEY_9812";
 let pmrSocioSelecionado=null;
@@ -4151,7 +4151,7 @@ function importarParaLancamentoProvisorio(){
         horaIni:curso?(curso.horaSolta||""):"",
         partida:curso?(curso.horaSolta||""):"",
         dataFim:curso?(curso.data||""):"",
-        horaFim:"",
+        horaFim:p.hora,
         chegada:p.hora,
         dias:"1",
         tMorto:curso?(curso.tm1||"00:00:00"):"00:00:00",
@@ -4609,5 +4609,5 @@ window.addEventListener("load", async function(){
   });
 })();
 </script>
-<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a248a7e8ea1e3749',t:'MTc4NTYyNzI5MQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</body>
 </html>
